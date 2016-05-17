@@ -72,10 +72,9 @@ class WebConfig extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/tpl/**")
+		registry.addMapping("/**")
 			.allowedOrigins("https://spring-wine-test.herokuapp.com", "https://spring-wine.herokuapp.com")
-			.allowedMethods("GET")
-			.allowCredentials(false).maxAge(3600);
+			;
 	}
 }
 
