@@ -17,6 +17,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpHeaders;
@@ -26,6 +27,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -58,6 +62,20 @@ public class WinecellarApplication {
 			wineRepository.save(wineList);
 			
 		};
+	}
+}
+
+
+@Configuration
+@EnableWebMvc
+class WebConfig extends WebMvcConfigurerAdapter {
+
+	@Override
+	public void addCorsMappings(CorsRegistry registry) {
+		registry.addMapping("/tpl/**")
+			.allowedOrigins("https://spring-wine-test.herokuapp.com", "https://spring-wine.herokuapp.com")
+			.allowedMethods("GET")
+			.allowCredentials(false).maxAge(3600);
 	}
 }
 
