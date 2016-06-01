@@ -1,4 +1,6 @@
-tags: [Spring Boot, REST, CRUD]
+---
+tags: [spring-boot, BackboneJS, REST, Spring Data JPA]
+---
 # Spring Boot and BackboneJS
 This example demonstrates how **Spring Boot**, **Spring Data JPA** and in the front-end **BackboneJS** can be used together to write web applications easily.
 
