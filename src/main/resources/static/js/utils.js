@@ -50,13 +50,14 @@ window.utils = {
 
     addValidationError: function (field, message) {
         var controlGroup = $('#' + field).parent().parent();
-        controlGroup.addClass('error');
+        console.log(controlGroup.html());
+        controlGroup.addClass('has-warning');
         $('.help-inline', controlGroup).html(message);
     },
 
     removeValidationError: function (field) {
         var controlGroup = $('#' + field).parent().parent();
-        controlGroup.removeClass('error');
+        controlGroup.removeClass('has-warning');
         $('.help-inline', controlGroup).html('');
     },
 

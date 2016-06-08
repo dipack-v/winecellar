@@ -1,5 +1,5 @@
 window.WineView = Backbone.View.extend({
-
+	className: "row",
     initialize: function () {
         this.render();
     },
