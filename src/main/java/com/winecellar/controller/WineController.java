@@ -3,6 +3,7 @@ package com.winecellar.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.winecellar.repository.WineRepository;
 import com.winecellar.repository.entity.WineEntity;
-
+@CrossOrigin(origins = {"https://spring-wine-test.herokuapp.com", "https://spring-wine.herokuapp.com"})
 @RestController
 public class WineController {
 	@Autowired
