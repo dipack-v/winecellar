@@ -1,86 +1,94 @@
 <h3 class="col-sm-12">Wine Details</h3>
-<form class="form-horizontal">
-	<div class="form-group">
-		<label for="wineId" class="control-label col-sm-2" for="wineId">Id:</label>
+<div class="col-sm-12">
+	<div class="row">
+	<div class="col-sm-8">
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label for="wineId" class="control-label col-sm-2" for="wineId">Id:</label>
+					<div class="col-sm-8">
+						<input id="wineId" name="id" class="form-control" type="text" value="<%= id === null ? '' : id %>" disabled />
+					</div>
+				</div>
+			
+				<div class="form-group">
+					<label for="name" class="control-label col-sm-2" for="name">Name:</label>
+			
+					<div class="col-sm-8">
+						<input type="text" id="name" class="form-control form-control-warning" name="name" value="<%= name %>" /> <span class="help-inline"></span>
+					</div>
+				</div>
+			
+				<div class="form-group">
+					<label for="grapes" class="control-label col-sm-2">Grapes:</label>
+			
+					<div class="col-sm-8">
+						<input type="text" id="grapes" class="form-control" name="grapes" value="<%= grapes %>" /> <span class="help-inline"></span>
+					</div>
+				</div>
+			
+				<div class="form-group">
+					<label for="country" class="control-label col-sm-2">Country:</label>
+			
+					<div class="col-sm-8">
+						<input type="text" id="country" name="country" class="form-control" value="<%= country %>" /> <span class="help-inline"></span>
+					</div>
+				</div>
+			
+				<div class="form-group">
+					<label for="region" class="control-label col-sm-2">Region:</label>
+			
+					<div class="col-sm-8">
+						<input type="text" id="region" class="form-control" name="region" value="<%= region %>" />
+					</div>
+				</div>
+			
+				<div class="form-group">
+					<label for="year" class="control-label col-sm-2">Year:</label>
+			
+					<div class="col-sm-8">
+						<select class="form-control" id="year" name="year" value="<%= year %>">
+							<option<%= year == 2012?'selected':'' %>>2012</option>
+							<option<%= year == 2011?'selected':'' %>>2011</option>
+							<option<%= year == 2010?'selected':'' %>>2010</option>
+							<option<%= year == 2009?'selected':'' %>>2009</option>
+							<option<%= year == 2008?'selected':'' %>>2008</option>
+							<option<%= year == 2007?'selected':'' %>>2007</option>
+						</select>
+					</div>
+				</div>
+			
+				<div class="form-group">
+					<label for="description" class="control-label col-sm-2">Notes:</label>
+			
+					<div class="col-sm-8">
+						<textarea id="description" class="form-control " name="description" class="span6" rows="6"><%= description
+			                                %></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<a href="#" class="btn btn-primary save">Save</a> <a href="#" class="btn btn-default delete">Delete</a>
+					</div>
+				</div>
+			
+			</form>
+		</div>
 		<div class="col-sm-4">
-			<input id="wineId" name="id" class="form-control" type="text" value="<%= id === null ? '' : id %>" disabled />
+		
+				<div class="thumbnail">
+			
+					<img id="picture" width="180" src="<%= picture === null ? 'pics/generic.jpg' : 'pics/' + picture %>" />
+			
+					<div class="caption">
+						<p>To change the picture, drag a new picture from your file system onto the box above.</p>
+					</div>
+				</div>
+		
+		
 		</div>
 	</div>
-
-	<div class="form-group">
-		<label for="name" class="control-label col-sm-2" for="name">Name:</label>
-
-		<div class="col-sm-4">
-			<input type="text" id="name" class="form-control form-control-warning" name="name" value="<%= name %>" /> <span class="help-inline"></span>
-		</div>
-	</div>
-
-	<div class="form-group">
-		<label for="grapes" class="control-label col-sm-2">Grapes:</label>
-
-		<div class="col-sm-4">
-			<input type="text" id="grapes" class="form-control" name="grapes" value="<%= grapes %>" /> <span class="help-inline"></span>
-		</div>
-	</div>
-
-	<div class="form-group">
-		<label for="country" class="control-label col-sm-2">Country:</label>
-
-		<div class="col-sm-4">
-			<input type="text" id="country" name="country" class="form-control" value="<%= country %>" /> <span class="help-inline"></span>
-		</div>
-	</div>
-
-	<div class="form-group">
-		<label for="region" class="control-label col-sm-2">Region:</label>
-
-		<div class="col-sm-4">
-			<input type="text" id="region" class="form-control" name="region" value="<%= region %>" />
-		</div>
-	</div>
-
-	<div class="form-group">
-		<label for="year" class="control-label col-sm-2">Year:</label>
-
-		<div class="col-sm-4">
-			<select class="form-control" id="year" name="year" value="<%= year %>">
-				<option<%= year == 2012?'selected':'' %>>2012</option>
-				<option<%= year == 2011?'selected':'' %>>2011</option>
-				<option<%= year == 2010?'selected':'' %>>2010</option>
-				<option<%= year == 2009?'selected':'' %>>2009</option>
-				<option<%= year == 2008?'selected':'' %>>2008</option>
-				<option<%= year == 2007?'selected':'' %>>2007</option>
-			</select>
-		</div>
-	</div>
-
-	<div class="form-group">
-		<label for="description" class="control-label col-sm-2">Notes:</label>
-
-		<div class="col-sm-4">
-			<textarea id="description" class="form-control " name="description" class="span6" rows="6"><%= description
-                                %></textarea>
-		</div>
-	</div>
-	<div class="form-group">
-		<div class="col-sm-offset-2 col-sm-10">
-			<a href="#" class="btn btn-primary save">Save</a> <a href="#" class="btn btn-default delete">Delete</a>
-		</div>
-	</div>
-
-</form>
-
-<div class="col-xs-6 col-md-3">
-	<div class="thumbnail">
-
-		<img id="picture" width="180" src="<%= picture === null ? 'pics/generic.jpg' : 'pics/' + picture %>" />
-
-		<div class="caption">
-			<p>To change the picture, drag a new picture from your file system onto the box above.</p>
-		</div>
-	</div>
-
 </div>
+
 
 <div class="row status-bar">
 	<div class="span12">
